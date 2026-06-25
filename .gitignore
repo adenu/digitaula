@@ -1,0 +1,9 @@
+output/
+build/
+dist/
+config.yaml
+sources/*
+!sources/.gitkeep
+__pycache__/
+*.pyc
+.venv/

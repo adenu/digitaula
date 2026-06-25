@@ -1,0 +1,121 @@
+# =============================================================================
+# DigitAula — personalização visual da aula HTML
+# =============================================================================
+#
+# O conteúdo (título, textos, mídia) vem do Word. Este arquivo define aparência,
+# rótulos e comportamento da página gerada.
+#
+# Como usar
+# ---------
+#   1. Copie este arquivo para config.yaml (mesma pasta do .exe ou do projeto)
+#   2. Altere os valores abaixo e salve
+#   3. Gere a aula de novo
+#
+# =============================================================================
+
+# --- Identidade visual -------------------------------------------------------
+
+brand:
+  # Nome da instituição — aparece acima do título na capa (se show_brand_on_cover).
+  name: "Escola Municipal Professor João Silva"
+
+  # Cor principal da escola — capa, títulos, botões e destaques.
+  #
+  # Você NÃO precisa entender o código. Duas formas fáceis:
+  #   1. Copie uma cor pronta da paleta no final deste arquivo
+  #   2. Escolha a cor em um seletor online e copie o código que começa com #:
+  #      https://htmlcolorcodes.com/color-picker/
+  primary_color: "#2563eb"
+
+  # Cor secundária opcional (mesma lógica da principal).
+  # Deixe "" para não usar.
+  secondary_color: "#1e40af"
+
+  # Logo na capa: URL https ou caminho relativo ao .docx (ex.: assets/logo.png).
+  # Deixe "" para não exibir.
+  logo: ""
+  logo_alt: "Brasão da escola"
+
+# --- Página e textos da interface --------------------------------------------
+
+lesson:
+  lang: "pt-BR"
+
+  # Tema Bootstrap: light | dark
+  theme: "light"
+
+  # Largura do conteúdo: sm | md | lg | xl | xxl | fluid
+  container: "lg"
+
+  # Rodapé centralizado. "" = sem rodapé.
+  footer: "Material de apoio — Geografia · Ano letivo 2026"
+
+  # Exibir o nome da marca (brand.name) na capa?
+  show_brand_on_cover: true
+
+  # Texto antes do nome do autor na capa.
+  author_prefix: "Por"
+
+  # Rótulos das caixas da capa e fallback de seção sem [heading].
+  labels:
+    purpose: "Objetivo"
+    preparation: "Antes de começar"
+    section_fallback: "Seção"
+
+# --- Seções ------------------------------------------------------------------
+
+sections:
+  # Numeração visual nos títulos das seções.
+  show_numbers: true
+
+  # Estilo do número: badge | text | hidden
+  #   badge  → bolinha colorida ao lado do título
+  #   text   → "1. Título da seção"
+  #   hidden → só o título, sem número
+  number_style: "badge"
+
+# --- Blocos de conteúdo ------------------------------------------------------
+
+blocks:
+  # Estilo padrão das tags [callout]:
+  # info | warning | success | danger | primary | secondary
+  callout_style: "info"
+
+  # Altura máxima de imagens (CSS: rem, px, etc.).
+  image_max_height: "28rem"
+
+  # Links [link] abrem em nova aba?
+  link_opens_new_tab: true
+
+# --- SEO e aba do navegador --------------------------------------------------
+
+meta:
+  # Sufixo no <title>. Ex.: "EAD · 6º ano" → "Geografia do Brasil · EAD · 6º ano"
+  title_suffix: "Material EAD"
+
+  # Descrição para buscadores. Vazio = usa definição ou objetivo do Word.
+  description: "Aula de geografia sobre as regiões brasileiras."
+
+# =============================================================================
+# Paleta pronta — copie o código ao lado do nome (cole em primary_color)
+# =============================================================================
+#
+#   Azul institucional  →  #2563eb
+#   Azul escuro         →  #1e40af
+#   Verde               →  #16a34a
+#   Roxo                →  #7c3aed
+#   Laranja             →  #ea580c
+#   Vermelho            →  #dc2626
+#   Cinza               →  #475569
+#
+# Quer outra cor? Abra o seletor, clique na cor desejada e copie o código #:
+#   https://htmlcolorcodes.com/color-picker/
+#
+# =============================================================================
+# Exemplo mínimo — só troque brand.name e salve como config.yaml:
+# =============================================================================
+# brand:
+#   name: "Minha Escola"
+#   primary_color: "#2563eb"
+# lesson:
+#   footer: ""

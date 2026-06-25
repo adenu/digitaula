@@ -1,0 +1,53 @@
+/* Ajustes mínimos sobre Bootstrap — white-label via --bs-primary no HTML */
+
+.lesson-page {
+  background-color: var(--bs-body-bg);
+}
+
+.lesson-hero .alert {
+  max-width: 42rem;
+}
+
+.lesson-section .card-text p:last-child,
+.lesson-section .accordion-body p:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-section .list-group {
+  border-radius: var(--bs-border-radius);
+  overflow: hidden;
+}
+
+.lesson-block + .lesson-block {
+  margin-top: 1rem;
+}
+
+.lesson-image img {
+  max-height: var(--lesson-image-max-height, 28rem);
+  object-fit: cover;
+  width: 100%;
+}
+
+.lesson-brand-logo {
+  max-height: 4rem;
+  max-width: 14rem;
+  object-fit: contain;
+}
+
+.lesson-video iframe,
+.lesson-video video {
+  border: 0;
+  border-radius: var(--bs-border-radius);
+}
+
+.lesson-audio audio {
+  min-height: 3rem;
+}
+
+.lesson-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-divider {
+  opacity: 0.35;
+}

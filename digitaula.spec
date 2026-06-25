@@ -13,7 +13,7 @@ a = Analysis(
     ],
     hiddenimports=[
         'lesson', 'lesson.cli', 'lesson.config', 'lesson.parser', 'lesson.renderer',
-        'lesson.paths', 'lesson.ui', 'lesson.media', 'lesson.dialogs', 'lesson.theme',
+        'lesson.paths', 'lesson.ui', 'lesson.media', 'lesson.dialogs', 'lesson.theme', 'lesson.meta',
         'tkinter', 'tkinter.filedialog', '_tkinter',
     ],
     hookspath=[],

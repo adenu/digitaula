@@ -311,3 +311,11 @@ Sul [/list]
 - Modelo de referência: `examples/geografia-brasil.docx`
 - Seus arquivos de trabalho: pasta `sources/`
 - Índice da documentação: [README.md](./README.md)
+
+---
+
+## Sobre o DigitAula
+
+Ferramenta criada por [github.com/adenu](https://github.com/adenu) para quem produz aula no Word e precisa publicar no EAD sem depender de fila técnica a cada revisão.
+
+Código aberto: [github.com/adenu/digitaula](https://github.com/adenu/digitaula)

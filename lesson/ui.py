@@ -4,6 +4,8 @@ import os
 import sys
 from pathlib import Path
 
+from .meta import AUTHOR_HANDLE, TAGLINE
+
 _BOX_INNER = 50
 
 
@@ -82,13 +84,12 @@ def print_banner() -> None:
     plain1 = "                  DigitAula"
     row1 = _box_line(plain1, f"                  {brand}")
 
-    left = stylize("Word com tags", _C.DIM)
-    dot = stylize("·", _C.CYAN)
-    right = stylize("aula EAD", _C.DIM)
-    plain2 = "         Word com tags  ·  aula EAD"
-    row2 = _box_line(plain2, f"         {left}  {dot}  {right}")
+    plain2 = f"         {TAGLINE}"
+    tagline = stylize(TAGLINE, _C.DIM)
+    row2 = _box_line(plain2, f"         {tagline}")
 
-    print("\n".join(["", _box_top(), _box_line(""), row1, row2, _box_line(""), _box_bottom(), ""]))
+    credit = stylize(AUTHOR_HANDLE, _C.DIM)
+    print("\n".join(["", _box_top(), _box_line(""), row1, row2, _box_line(""), _box_bottom(), f"  {credit}", ""]))
 
 
 def print_section(title: str) -> None:

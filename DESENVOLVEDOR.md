@@ -1,8 +1,10 @@
 # Guia do desenvolvedor — DigitAula
 
-Documentação para quem **mantém ou altera** a ferramenta (código, build, distribuição).
+Por [github.com/adenu](https://github.com/adenu). Código em [github.com/adenu/digitaula](https://github.com/adenu/digitaula).
 
 Professores que só **usam** o programa devem ler o **[Guia do professor](./GUIA-PROFESSOR.md)**.
+
+Documentação para quem mantém ou altera a ferramenta (código, build, distribuição).
 
 ---
 

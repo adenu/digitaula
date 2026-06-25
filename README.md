@@ -2,88 +2,69 @@
 
 **Monte no Word, publique no EAD.**
 
-Ferramenta open source para docentes converterem um `.docx` estruturado em **página web** pronta para abrir no navegador ou publicar em **LMS** (Moodle, Google Classroom, ambientes EAD etc.).
+Ferramenta para transformar um `.docx` com marcações simples em **página web** — capa, seções, mídia e perguntas — pronta para o Moodle, Classroom ou qualquer ambiente EAD.
+
+Desenvolvido por **[github.com/adenu](https://github.com/adenu)**.
 
 ---
 
-## Por que este projeto existe
+## De onde veio
 
-Na Educação a Distância, o gargalo costuma não ser a didática — é a **distância entre a ideia do professor e o material publicado**: filas de design, templates engessados ou ferramentas que exigem perfil técnico.
+Trabalhei com material didático digital em contexto corporativo de educação e vi o mesmo padrão repetir: o professor tinha o conteúdo no Word, mas dependia de alguém de TI ou de uma fila de design para publicar cada atualização.
 
-O **DigitAula** devolve **autonomia editorial ao docente**. Você organiza a aula no Word, com marcações simples, e gera um HTML responsivo com capa, seções, mídia e atividades interativas — **no seu ritmo**, revisando e republicando quando quiser.
+O DigitAula nasceu disso — uma saída direta: **o docente continua no Word**, marca o texto com tags (`[cover]`, `[section]`, `[image]`…) e gera o HTML localmente, sem login, sem editor proprietário, no próprio ritmo.
 
-O professor permanece no ambiente que já domina; a ferramenta cuida da conversão.
-
----
-
-## O que você consegue produzir
-
-- **Capa** com título, autor, objetivos e orientações prévias
-- **Seções** com texto, listas e perguntas com resposta expansível
-- **Mídia**: imagens, vídeos (YouTube/Vimeo ou arquivo), áudio e links
-- **Destaques**: citações, caixas de aviso e separadores visuais
-- **Visual configurável** (nome da instituição, cor da marca, rodapé) via YAML
-
-Saída: `index.html` + `lesson.css` (+ pasta `media/` quando há arquivos locais).
+Não é plataforma. É uma ponte entre o que o professor já escreve e o que o EAD precisa receber.
 
 ---
 
-## Como funciona
+## O que sai no final
 
-```
-Word (.docx) com tags  →  DigitAula  →  aula HTML (Bootstrap 5)
-```
+- Capa com título, autor, objetivo e orientações
+- Seções com texto, listas, imagens, vídeo, áudio, links
+- Perguntas com resposta expansível
+- Visual ajustável por `config.yaml` (cor da escola, rodapé, tema claro/escuro)
 
-1. O docente escreve no Word usando tags como `[cover]`, `[section]`, `[paragraph]`, `[image]`, `[video]`…
-2. Executa a ferramenta (`DigitAula.exe` no Windows ou `python app.py` no desenvolvimento).
-3. Abre ou publica o HTML gerado na plataforma de ensino.
+Arquivos gerados: `index.html`, `lesson.css` e, se houver mídia local, a pasta `media/`.
 
 ---
 
 ## Documentação
 
-| Perfil | Guia |
-|--------|------|
-| **Professor** — monta o Word e gera a aula | [**Guia do professor**](./GUIA-PROFESSOR.md) |
-| **Desenvolvedor** — código, build e distribuição | [**Guia do desenvolvedor**](./DESENVOLVEDOR.md) |
+| Quem | Guia |
+|------|------|
+| Professor | [GUIA-PROFESSOR.md](./GUIA-PROFESSOR.md) |
+| Desenvolvedor | [DESENVOLVEDOR.md](./DESENVOLVEDOR.md) |
 
-Exemplo pronto: [`examples/geografia-brasil.docx`](./examples/geografia-brasil.docx)
+Exemplo: [`examples/geografia-brasil.docx`](./examples/geografia-brasil.docx)
 
 ---
 
-## Início rápido (desenvolvimento)
+## Uso rápido
 
 ```bash
 pip install -r requirements.txt
-python app.py                              # modo interativo
-python app.py examples/geografia-brasil.docx # conversão direta
+python app.py
+python app.py examples/geografia-brasil.docx
 ```
 
-### Distribuir para o professor (sem Python)
+Para gerar o `.exe` e enviar a um professor sem Python:
 
 ```bash
 pip install -r requirements.txt -r requirements-dev.txt
 scripts\build.bat
 ```
 
-Envie a pasta `dist/DigitAula` inteira. O docente só precisa executar `DigitAula.exe`.
+A pasta `dist/DigitAula` contém o `DigitAula.exe` e tudo que ele precisa.
 
 ---
 
 ## Stack
 
-Python · python-docx · PyYAML · Bootstrap 5 (CDN) · PyInstaller
+Python · python-docx · PyYAML · Bootstrap 5 · PyInstaller
 
 ---
 
-## Estrutura do repositório
+## Licença
 
-```
-app.py
-lesson/              # parser, renderer, CLI, mídia
-assets/lesson.css
-sources/             # seus .docx (listados no CLI)
-examples/            # modelo de referência
-config.example.yaml
-scripts/build.bat
-```
+MIT — veja [LICENSE](./LICENSE).

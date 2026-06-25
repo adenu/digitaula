@@ -11,6 +11,7 @@ from .media import (
     vimeo_embed_id,
     youtube_embed_id,
 )
+from .meta import AUTHOR_HANDLE, PROJECT_NAME
 from .parser import lesson_data
 from .theme import LessonTheme
 
@@ -80,6 +81,7 @@ def render_lesson(parsed: dict[str, Any], config: dict[str, Any], docx_path: Pat
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="{html.escape(meta_description)}" />
+  <meta name="generator" content="{html.escape(f'{PROJECT_NAME} — {AUTHOR_HANDLE}')}" />
   <title>{html.escape(page_title)}</title>
   <link rel="stylesheet" href="{BOOTSTRAP_CSS}" />
   <link rel="stylesheet" href="lesson.css" />
